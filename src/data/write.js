@@ -10,21 +10,7 @@ let docClient = new AWS.DynamoDB.DocumentClient();
 
 let save = function () {
 
-    var input = {
-        "chave": "Testeeeee", "created_by": "Luiz", "ID": "2"
-    };
-    var params = {
-        TableName: "padaria",
-        Item:  input
-    };
-    docClient.put(params, function (err, data) {
-
-        if (err) {
-            console.log("users::save::error - " + JSON.stringify(err, null, 2));                      
-        } else {
-            console.log("users::save::success" );                      
-        }
-    });
+   
 }
 
 save();

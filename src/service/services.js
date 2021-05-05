@@ -1,12 +1,18 @@
 const data = require('../data/data');
 
-exports.deleteObj = function(param, res){
-    return data.remove(param, res);
+exports.removerObj = function(param, res){
+    return data.remover(param, res);
 }
 
-exports.readObj = function(param, res){
-    return data.recuperaPelaChave(param, res);
+exports.recuperarPelaChave = function(param, res){
+    return data.recuperarPelaChave(param, res);
 }
-exports.alteraObj = function(param, res){
-    return data.altera(param, res);
+exports.recuperarTodos = function(res){
+    return data.recuperarTodos(res);
+}
+exports.alterarObj = function(param, res){
+    return data.alterar(param, res);
+}
+exports.inserirObj = function(param, res){
+    return data.inserir(param, res);
 }

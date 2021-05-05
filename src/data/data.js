@@ -1,7 +1,21 @@
 const docClient = require('../dataBase/base');
 
 
-exports.recuperaPelaChave = function (param, res) {
+exports.recuperarTodos = function(res){
+    var parametros = {TableName: "padaria"}
+
+    docClient.scan(parametros, function (err, data) {
+        if (err) {
+            res.json(err);
+        }
+        else {
+            res.json(data);
+        }
+    })
+    
+}
+
+exports.recuperarPelaChave = function (param, res) {
     var parametros = {
         TableName: "padaria",
         Key: {
@@ -18,7 +32,7 @@ exports.recuperaPelaChave = function (param, res) {
     })
 }
 
-exports.remove = function(param, res) {
+exports.remover = function(param, res) {
     var parametros = {
         TableName: "padaria",
         Key: {
@@ -34,7 +48,7 @@ exports.remove = function(param, res) {
     });
 }
 
-exports.altera = function (jsonAlterar, res) {
+exports.alterar = function (jsonAlterar, res) {
     var parametros = {
         TableName: "padaria",
         Key: { "chave": jsonAlterar.chave },
@@ -48,6 +62,22 @@ exports.altera = function (jsonAlterar, res) {
             res.json("Erro ao alterar objeto. Erro: " + err);
         } else {
             res.json("Sucesso ao alterar o objeto. Retorno: " + data);
+        }
+    });
+}
+
+exports.inserir = function(jsonInserir, res){
+
+    var params = {
+        TableName: "padaria",
+        Item:  jsonInserir.parametrosInsert
+    };
+    docClient.put(params, function (err, data) {
+
+        if (err) {
+            res.json("Erro ao inserir objeto. Erro: " + err);                     
+        } else {
+            res.json("Sucesso ao inserir item")                  
         }
     });
 }

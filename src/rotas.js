@@ -6,15 +6,24 @@ router.get('/servico', async function(req, res){
     res.json("Sucesso!")
 })
 
-router.get('/exclui/:id', async function(req, res){
-    const retorno = await service.deleteObj(req.params.id, res);
+router.delete('/excluir/:id', async function(req, res){
+    const retorno = await service.removerObj(req.params.id, res);
 })
 
-router.get('/recupera/:id', async function(req,res){
-    const retorno = await service.readObj(req.params.id, res);
+router.get('/recuperar/:id', async function(req,res){
+    const retorno = await service.removerObj(req.params.id, res);
 })
 
-router.post('/altera', async function (req, res){
-    const retorno = await service.alteraObj(req.body, res);
+router.get('/recuperarTodos', async function(req,res){
+    const retorno = await service.recuperarTodos(res);
 })
+
+router.put('/alterar', async function (req, res){
+    const retorno = await service.alterarObj(req.body, res);
+})
+
+router.patch("/inserir", async function (req, res){
+    const retorno = await service.inserirObj(req.body, res);
+})
+
 module.exports = router;
