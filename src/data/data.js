@@ -27,7 +27,13 @@ exports.recuperarPelaChave = function (param, res) {
             res.json(err);
         }
         else {
-            res.json(data);
+            if(data.Item === undefined){
+                res.json("Não foram encontrados registros")
+              
+            } else {
+                res.json(data);
+            }
+            
         }
     })
 }
@@ -61,7 +67,7 @@ exports.alterar = function (jsonAlterar, res) {
         if (err) {
             res.json("Erro ao alterar objeto. Erro: " + err);
         } else {
-            res.json("Sucesso ao alterar o objeto. Retorno: " + data);
+            res.json("Sucesso ao alterar o objeto.");
         }
     });
 }

@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "b4da0b33-72a1-46a1-a37d-33ebeb0ce5a9",
+		"name": "Dynamo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Update Integração Dynamo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"chave\" : \"3\",\r\n    \"expressaoUpdate\" : \"set ttlExcluir = :valor\",\r\n    \"valoresExpressao\" : {\r\n        \":valor\": true\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/alterar/",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"alterar",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recupera Integração Dynamo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/recuperar/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"recuperar",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exclui Integração Dynamo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8081/excluir/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"excluir",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Integração Dynamo",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"parametrosInsert\" : {\r\n        \"chave\" : \"2\",\r\n        \"nome\" : \"Kassio\",\r\n        \"boolean\" : false,\r\n        \"numerico\" : 2,\r\n        \"lista\" : [\"1\", \"2\", 2345, null],\r\n        \"mapa\" :{\r\n            \"listaDoMapa\" : [1,2,3, [\"a\", \"b\", \"c\", \"d\", \"e\"]],\r\n            \"numericoDoMapa\" : 15,\r\n            \"varcharDoMapa\" : \"Teste\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/inserir",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"inserir"
+					]
+				},
+				"description": "    "
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Integração Dynamo Copy",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"parametrosInsert\" : {\r\n        \"chave\" : \"3\",\r\n        \"padaria\" : \"Padaria Benkendorf\",\r\n        \"lanches\" : [\"Misto quente\", \"PÃO COM BOLINHO\", \"X-SALADA\"],\r\n        \"cafe\" : [\"Expresso\"],\r\n        \"bebidas\" : [\"Cuba\", \"Cerveja\", \"Coquinha gelada\"]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/inserir",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"inserir"
+					]
+				},
+				"description": "    "
+			},
+			"response": []
+		},
+		{
+			"name": "RecuperaTodos Integração Dynamo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/recuperarTodos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"recuperarTodos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

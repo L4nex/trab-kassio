@@ -11,7 +11,7 @@ router.delete('/excluir/:id', async function(req, res){
 })
 
 router.get('/recuperar/:id', async function(req,res){
-    const retorno = await service.removerObj(req.params.id, res);
+    const retorno = await service.recuperarPelaChave(req.params.id, res);
 })
 
 router.get('/recuperarTodos', async function(req,res){
